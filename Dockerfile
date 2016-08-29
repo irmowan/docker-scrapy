@@ -23,5 +23,8 @@ RUN pip3 install Cython
 RUN pip3 install scrapy
 RUN pip3 install requests
 
+# add cron log file
+RUN touch /var/log/cron.log
+
 # define entrypoint
-CMD ["/bin/bash"]
+ENTRYPOINT ["/bin/bash"]
