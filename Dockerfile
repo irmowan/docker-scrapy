@@ -32,17 +32,6 @@ RUN wget $MSTUBE_ZIP
 RUN unzip master.zip
 RUN mv hackathon-mstube-master hackathon-mstube
 
-# config cron
-# RUN apt-get install -y cron
-# RUN cd ~
-# RUN crontab -l > mycron
-# RUN echo “* * * * * echo \”hello\” >> ~/hello.txt” >> mycron
-# RUN echo “0 * * * * source ~/hackathon-mstube/Crawler/youtube/autorun.sh” >> mycron
-# RUN crontab mycron
-# RUN rm mycron
-# RUN start cron
-# RUN service cron start
-
+# copy shell script and define entrypoint
 ADD entrypoint /
-# define entrypoint
 ENTRYPOINT /entrypoint $SOURCE

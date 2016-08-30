@@ -8,6 +8,10 @@ The image was auto-built and could be found at [Docker Hub](https://hub.docker.c
 
 The dockerfile is held on [GitHub](https://github.com/irmowan/docker-scrapy)
 
+`docker run -e SOURCE=source <image>`
+
+`docker run --rm -e SOURCE=source <image>`
+
 Author:
 
 [irmowan](https://github.com/irmowan)
