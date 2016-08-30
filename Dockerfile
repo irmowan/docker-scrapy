@@ -1,10 +1,8 @@
 From ubuntu:14.04
 MAINTAINER irmo <irmowan@gmail.com>
 
-ARG SOURCE
-
 ENV MSTUBE_ZIP https://github.com/luckyyd/hackathon-mstube/archive/master.zip
-ENV SOURCE test
+ENV SOURCE=
 
 # install packages
 RUN apt-get update -y
@@ -47,5 +45,4 @@ RUN mv hackathon-mstube-master hackathon-mstube
 
 ADD entrypoint /
 # define entrypoint
-ENTRYPOINT [“/entrypoint“]
-CMD [$SOURCE]
+ENTRYPOINT /entrypoint $SOURCE
