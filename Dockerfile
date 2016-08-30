@@ -23,8 +23,20 @@ RUN pip3 install Cython
 RUN pip3 install scrapy
 RUN pip3 install requests
 
-# add cron log file
+# get repository
+RUN cd ~ && wget https://github.com/luckyyd/hackathon-mstube/archive/master.zip
+RUN unzip master.zip
+
+# config cron
+RUN apt-get install -y cron
 RUN touch /var/log/cron.log
+RUN crontab -l > mycron
+RUN echo “* * * * * echo \”hello\” >> ~/hello.txt” >> mycron
+RUN echo “0 * * * * source ~/hackathon-mstube/Crawler/youtube/autorun.sh” >> mycron
+RUN crontab mycron
+RUN rm mycron
+RUN cron start
+RUN service cron start
 
 # define entrypoint
 ENTRYPOINT ["/bin/bash"]
