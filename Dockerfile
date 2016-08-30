@@ -27,7 +27,7 @@ RUN pip3 install scrapy
 RUN pip3 install requests
 
 # get repository
-WORKDIR ~ 
+WORKDIR /root
 RUN wget $MSTUBE_ZIP
 RUN unzip master.zip
 RUN mv hackathon-mstube-master hackathon-mstube
