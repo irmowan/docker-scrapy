@@ -24,7 +24,8 @@ RUN pip3 install scrapy
 RUN pip3 install requests
 
 # get repository
-RUN cd ~ && wget https://github.com/luckyyd/hackathon-mstube/archive/master.zip
+RUN cd ~ 
+RUN wget https://github.com/luckyyd/hackathon-mstube/archive/master.zip
 RUN unzip master.zip
 RUN mv hackathon-mstube-master hackathon-mstube
 
