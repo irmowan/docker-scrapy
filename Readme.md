@@ -8,9 +8,16 @@ The image was auto-built and could be found at [Docker Hub](https://hub.docker.c
 
 The dockerfile is held on [GitHub](https://github.com/irmowan/docker-scrapy)
 
-`docker run -e SOURCE=source <image>`
+### Usage
 
-`docker run --rm -e SOURCE=source <image>`
+```bash
+# Run the crawler
+docker run -e SOURCE=source <image>
+# Run the crawler, autoexit when done
+docker run --rm -e SOURCE=source <image>
+# Run the crawler background
+docker run -d -e SOURCE=source <image>
+```
 
 Author:
 
